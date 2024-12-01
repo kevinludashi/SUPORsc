@@ -35,80 +35,80 @@
 /* --------------------这里是分割线---------------------------- */	
 
 /* 导航栏样式 */
-			        nav ul {
-			            list-style-type: none; /* 去除导航列表的默认项目符号 */
-			            padding: 15px; /* 去除导航列表的内边距 */
-			            margin: 0;
-			            display: flex;
-			            justify-content: center;
-			        }
+	nav ul {
+	   list-style-type: none; /* 去除导航列表的默认项目符号 */
+	   padding: 15px; /* 去除导航列表的内边距 */
+	   margin: 0;
+	   display: flex;
+	   justify-content: center;
+	}
 			
-			        nav ul li {
-			            position: relative; /* 设置为相对定位，作为子菜单的定位参照 */
-						margin-right: 10px;  /* 设置每个导航项之间的右边距 */
-			        }
+	nav ul li {
+	   position: relative; /* 设置为相对定位，作为子菜单的定位参照 */
+	   margin-right: 10px;  /* 设置每个导航项之间的右边距 */
+	}
 			
-			        nav ul li a {
-			            display: inline-block; /* 设置链接为内联块元素，以便可以设置宽度和高度 */
-			            padding: 5px 7px; /* 增加按钮的内边距 */
-			            background-color: #3c3c3c; /* 设置按钮的背景色 */
-			            color: white; /* 设置导航链接的文字颜色为白色 */
-			            text-decoration: none; /* 去除导航链接的下划线 */
-			            font-size: 1.2rem; /* 设置导航文字的大小 */
-			            border: none; /* 去除按钮的边框 */
-			            border-radius: 5px; /* 设置按钮的圆角 */
-			        }
+	nav ul li a {
+	   display: inline-block; /* 设置链接为内联块元素，以便可以设置宽度和高度 */
+	   padding: 5px 7px; /* 增加按钮的内边距 */
+	   background-color: #3c3c3c; /* 设置按钮的背景色 */
+	   color: white; /* 设置导航链接的文字颜色为白色 */
+	   text-decoration: none; /* 去除导航链接的下划线 */
+	   font-size: 1.2rem; /* 设置导航文字的大小 */
+	   border: none; /* 去除按钮的边框 */
+	   border-radius: 5px; /* 设置按钮的圆角 */
+	}
 			
-			        nav ul li a:hover {
-			            background-color: red; /* 鼠标悬停时改变按钮的背景色 */
-			            text-decoration: underline; /* 鼠标悬停时为导航链接添加下划线 */
-			        }
+	nav ul li a:hover {
+	   background-color: red; /* 鼠标悬停时改变按钮的背景色 */
+	   text-decoration: underline; /* 鼠标悬停时为导航链接添加下划线 */
+    }
 			
-			        /* 响应式设计：当屏幕宽度小于768px时，调整按钮和文字大小 */
-			        @media (max-width: 768px) {
-			            nav ul li a {
-			                padding: 5px 7px; /* 缩小按钮的内边距 */
-			                font-size: 1.2rem; /* 缩小导航文字的大小 */
-			            }
-			        }
+    /* 响应式设计：当屏幕宽度小于768px时，调整按钮和文字大小 */
+    @media (max-width: 768px) {
+    nav ul li a {
+	   padding: 5px 7px; /* 缩小按钮的内边距 */
+	   font-size: 1.2rem; /* 缩小导航文字的大小 */
+    }
+   }
 			        			
-			        /* 响应式设计：当屏幕宽度小于480px时，进一步调整按钮和文字大小 */
-			        @media (max-width: 480px) {
-			            nav ul li a {
-			                padding: 4px 6px; /* 进一步缩小按钮的内边距 */
-			                font-size: 1rem; /* 进一步缩小导航文字的大小 */
-			            }
-			        }
+    /* 响应式设计：当屏幕宽度小于480px时，进一步调整按钮和文字大小 */
+    @media (max-width: 480px) {
+	nav ul li a {
+		padding: 4px 6px; /* 进一步缩小按钮的内边距 */
+		font-size: 1rem; /* 进一步缩小导航文字的大小 */
+	 }
+	}
 			
-			        /* 分类下拉菜单样式 */
-			        .dropdown-content {
-			            display: none;
-			            position: absolute; /* 绝对定位 */
-			            left: 0; /* 子菜单紧贴左侧 */
-			            top: 100%; /* 位于父元素下方 */
-			            background-color: #555; /* 子菜单颜色比页头背景色浅 */
-			            color: white; /* 子菜单字体颜色与菜单字体颜色一致 */
-			            min-width: 160px;
-			            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-			            z-index: 1;
-			        }
+	/* 分类下拉菜单样式 */
+    .dropdown-content {
+	    display: none;
+		position: absolute; /* 绝对定位 */
+		left: 0; /* 子菜单紧贴左侧 */
+		top: 100%; /* 位于父元素下方 */
+		background-color: #555; /* 子菜单颜色比页头背景色浅 */
+		color: white; /* 子菜单字体颜色与菜单字体颜色一致 */
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
 			
-			        .dropdown-content a {
-			            color: white; /* 子菜单链接颜色与菜单字体颜色一致 */
-			            padding: 12px 16px;
-			            text-decoration: none;
-			            display: block;
-			            text-align: center;
-			        }
+    .dropdown-content a {
+		color: white; /* 子菜单链接颜色与菜单字体颜色一致 */
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		text-align: center;
+	}
 			
-			        .dropdown-content a:hover {
-			            background-color: #f1f1f1;
-			        }
+	.dropdown-content a:hover {
+	    background-color: #f1f1f1;
+    }
 			
-			        .show {
-			            display: block;
-			        }
-			/* 导航栏样式 */
+	.show {
+		display: block;
+	}
+/* 导航栏样式 */
 
 /* --------------------这里是分割线---------------------------- */	
 
@@ -329,52 +329,34 @@
 	
 /* --------------------这里是分割线---------------------------- */	
 
-/* 轮播图区域样式 */
-.carousel {
-  width: 100%;
-  margin: auto;
-  overflow: hidden;
-  text-align: center;
-  position: relative;
-  max-height: 100vh; /* 限制最大高度为视口高度 */
-  display: none; /* 默认隐藏 */
-}
+/* 轮播图样式区域 */
+    .carousel {
+       position: relative;
+       margin: 0 auto;
+       overflow: hidden;
+    }
 
-.carousel img {
-  width: 100%;
-  height: auto;
-  display: none;
-  transition: opacity 1s ease-in-out;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+    .carousel img {
+       width: 100%;
+       display: none; /* 默认不显示图片 */
+    }
 
+    .carousel img.active {
+       display: block; /* 显示激活的图片 */
+    }
 
+    /* 电脑端轮播图样式 */
+    .desktop-carousel img {
+       max-width: 1920px;
+       height: auto;
+    }
 
-@media (min-width: 1200px) {
-  .carousel.desktop img {
-    display: block; /* 在桌面端显示图片 */
-  }
-  .carousel.desktop {
-    display: block; /* 在桌面端显示轮播图 */
-  }
-}
-
-@media (max-width: 1199px) {
-  .carousel.mobile img {
-    display: block; /* 在移动端显示图片 */
-  }
-  .carousel.mobile {
-    display: block; /* 在移动端显示轮播图 */
-  }
-}
-
-.carousel a {
-  display: block;
-  color: transparent;
-  text-decoration: none;
-}
+    /* 手机端轮播图样式 */
+    .mobile-carousel img {
+       max-width: 900px;
+       height: auto;
+    }
+/*轮播图区域*/
 
 /* --------------------这里是分割线---------------------------- */	
 
@@ -441,57 +423,56 @@
 /* --------------------这里是分割线---------------------------- */
 
 /* 以下温馨提示区域样式 */
-.reminder-box {
-  border: 1px solid #ccc; /* 边框颜色 */
-  border-radius: 10px; /* 圆角大小 */
-  padding: 10px; /* 内边距 */
-  width: 99%; /* 宽度自适应设备宽度，留出一定的边距 */
-  margin: 5px auto; /* 外边距居中 */
-  background-color: #f8f8f8; /* 淡淡的背景色 */
-  text-align: center; /* 文字内容居中 */
-  margin-top: 15px; /* 上边距 */
-  margin-bottom: -3px; /* 下边距 */
-  /* 移除max-width属性，使其宽度可以扩展到100% */
-}
+    .reminder-box {
+       border: 1px solid #ccc; /* 边框颜色 */
+       border-radius: 10px; /* 圆角大小 */
+       padding: 10px; /* 内边距 */
+       width: 99%; /* 宽度自适应设备宽度，留出一定的边距 */
+       margin: 5px auto; /* 外边距居中 */
+       background-color: #f8f8f8; /* 淡淡的背景色 */
+       text-align: center; /* 文字内容居中 */
+       margin-top: 15px; /* 上边距 */
+       margin-bottom: -3px; /* 下边距 */
+    }
 
-.reminder-title {
-  color: red; /* 标题颜色 */
-  font-size: 20px; /* 标题字体大小 */
-}
+    .reminder-title {
+       color: red; /* 标题颜色 */
+       font-size: 20px; /* 标题字体大小 */
+    }
 
-.reminder-list {
-  list-style-type: none; /* 移除列表项的默认样式 */
-  padding: 0; /* 移除列表的内边距 */
-}
+    .reminder-list {
+       list-style-type: none; /* 移除列表项的默认样式 */
+       padding: 0; /* 移除列表的内边距 */
+    }
 
-/* 响应式设计：平板 */
-@media (min-width: 768px) {
-  .reminder-box {
-    width: 98%; /* 在平板上稍微减少宽度 */
-  }
-  .reminder-title {
-    font-size: 24px; /* 在平板上增加标题字体大小 */
-  }
-}
+    /* 响应式设计：平板 */
+    @media (min-width: 768px) {
+    .reminder-box {
+       width: 98%; /* 在平板上稍微减少宽度 */
+     }
+    .reminder-title {
+       font-size: 24px; /* 在平板上增加标题字体大小 */
+     }
+    }
 
-/* 响应式设计：电脑端 */
-@media (min-width: 992px) {
-  .reminder-box {
-    width: 98%; /* 在电脑端进一步减少宽度 */
-  }
-  .reminder-title {
-    font-size: 28px; /* 在电脑端增加标题字体大小 */
-  }
-}
+    /* 响应式设计：电脑端 */
+    @media (min-width: 992px) {
+    .reminder-box {
+       width: 98%; /* 在电脑端进一步减少宽度 */
+    }
+    .reminder-title {
+       font-size: 28px; /* 在电脑端增加标题字体大小 */
+    }
+   }
 
-/* 修改左右边距为auto，保持上下边距不变 */
-@media (min-width: 1200px) {
-  .reminder-box {
-    width: 98%; /* 在超大屏幕上宽度设置为100% */
-    margin-left: auto; /* 左边距自动 */
-    margin-right: auto; /* 右边距自动 */
-  }
-}
+   /* 修改左右边距为auto，保持上下边距不变 */
+    @media (min-width: 1200px) {
+    .reminder-box {
+        width: 98%; /* 在超大屏幕上宽度设置为100% */
+        margin-left: auto; /* 左边距自动 */
+         margin-right: auto; /* 右边距自动 */
+     }
+    }
 /* 以上温馨提示区域样式 */
 
 /* --------------------这里是分割线---------------------------- */	
@@ -595,17 +576,17 @@
 /* --------------------这里是分割线---------------------------- */	
 
 /* 以上下是确保页头页脚宽度一致 */
-html, body {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;  /* 使得元素宽度包含内边距和边框 */
-}
+   html, body {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;  /* 使得元素宽度包含内边距和边框 */
+    }
 
-* {
-  box-sizing: border-box;
-}
- /* 以上下是确保页头页脚宽度一致 */
+   * {
+       box-sizing: border-box;
+    }
+/* 以上下是确保页头页脚宽度一致 */
  
  /* --------------------这里是分割线---------------------------- */	
  
@@ -678,28 +659,26 @@ html, body {
 <!--------------------这里是分割线----------------------------->	  
 
 <!-- 轮播图区域 -->
-<div class="carousel desktop">
-  <!-- 桌面端图片 -->
-  <a href="https://www.example.com/link1" target="_blank" onclick="event.preventDefault();">
-    <img src="https://img.alicdn.com/imgextra/i2/2873818587/O1CN018Zo0Ik2DIu1zWPArA_!!2873818587.png" style="display: block;">
+<!-- 电脑端轮播图 -->
+<div class="carousel desktop-carousel">
+  <a href="https://www.baidu.com" target="_blank">
+    <img src="https://img.alicdn.com/imgextra/i2/2873818587/O1CN018Zo0Ik2DIu1zWPArA_!!2873818587.png" class="active" alt="Slide 1">
   </a>
-  <a href="https://www.example.com/link2" target="_blank" onclick="event.preventDefault();">
-    <img src="https://img.alicdn.com/imgextra/i2/2873818587/O1CN01WGS56A2DIu214Q04W_!!2873818587.png" style="display: block;">
+  <a href="https://www.baidu.com" target="_blank">
+    <img src="https://img.alicdn.com/imgextra/i2/2873818587/O1CN01WGS56A2DIu214Q04W_!!2873818587.png" alt="Slide 2">
   </a>
-  <!-- 添加更多图片 -->
 </div>
 
-<div class="carousel mobile">
-  <!-- 移动端图片 -->
-  <a href="" target="_blank" onclick="event.preventDefault();">
-    <img src="https://img.alicdn.com/imgextra/i3/2873818587/O1CN01GjJwkE2DIu1uG48hs_!!2873818587.png" style="display: block;">
+<!-- 手机端轮播图 -->
+<div class="carousel mobile-carousel" style="display: none;">
+  <a href="https://www.baidu.com" target="_blank">
+    <img src="https://img.alicdn.com/imgextra/i3/2873818587/O1CN01GjJwkE2DIu1uG48hs_!!2873818587.png" class="active" alt="Slide 1">
   </a>
-  <a href="" target="_blank" onclick="event.preventDefault();">
-    <img src="https://img.alicdn.com/imgextra/i4/2873818587/O1CN011WBPe42DIu21NJXme_!!2873818587.png" style="display: block;">
+  <a href="https://www.baidu.com" target="_blank">
+    <img src="https://img.alicdn.com/imgextra/i4/2873818587/O1CN011WBPe42DIu21NJXme_!!2873818587.png" alt="Slide 2">
   </a>
-  <!-- 添加更多图片 -->
 </div>
-
+<!-- 轮播图区域 -->
   
 <!--------------------这里是分割线----------------------------->	   
 
@@ -953,88 +932,44 @@ html, body {
 <!--------------------这里是分割线----------------------------->	  
 
  <script>
- // 轮播图区域 
-   var currentIndexDesktop = 0;
-   var currentIndexMobile = 0;
-   var timerDesktop, timerMobile;
-   
-   function initCarousel(carouselClass, index) {
-     var carousel = document.querySelector('.' + carouselClass);
-     var images = carousel.querySelectorAll('img');
-     var totalImages = images.length;
-   
-     // 显示指定索引的图片
-     images.forEach(function(img, i) {
-       img.style.display = i === index ? 'block' : 'none';
-     });
-   
-     // 设置轮播图容器的高度为最大图片的高度
-     // 设置轮播图容器的高度为最大图片的高度，但不超过视口的高度
-     function setCarouselHeight() {
-       var maxHeight = 0;
-       images.forEach(function(img) {
-         maxHeight = Math.max(maxHeight, img.offsetHeight);
-       });
-       var viewportHeight = window.innerHeight; // 获取视口的高度
-       carousel.style.height = Math.min(maxHeight, viewportHeight) + 'px'; // 设置高度，但不超过视口的高度
-     }
-   
-   
-     // 初始化时设置高度
-     setCarouselHeight();
-   
-     function showNextImage() {
-       var currentImage = images[index];
-       var nextIndex = (index + 1) % totalImages;
-       var nextImage = images[nextIndex];
-   
-       currentImage.style.display = 'none';
-       index = nextIndex;
-       nextImage.style.display = 'block';
-     }
-   
-     // 使用 setTimeout 来延迟开始轮播
-     var timer = setInterval(showNextImage, 2000);
-   
-     return timer;
+ // 轮播图区域
+ // 轮播图切换逻辑
+ function switchSlide(carouselClass) {
+   var carousel = document.querySelector('.' + carouselClass);
+   var slides = carousel.getElementsByTagName('a'); // 获取所有链接
+   var currentSlide = 0;
+ 
+   function nextSlide() {
+     var images = slides[currentSlide].getElementsByTagName('img'); // 获取当前链接下的图片
+     images[0].classList.remove('active'); // 移除当前图片的 active 类
+     currentSlide = (currentSlide + 1) % slides.length; // 计算下一张图片的索引
+     images = slides[currentSlide].getElementsByTagName('img'); // 获取下一张链接下的图片
+     images[0].classList.add('active'); // 为下一张图片添加 active 类
    }
-   
-   // 初始化桌面和移动端轮播图
-   timerDesktop = initCarousel('desktop', currentIndexDesktop);
-   timerMobile = initCarousel('mobile', currentIndexMobile);
-   
-   // 监听窗口大小变化，以切换轮播图显示
-   // 监听窗口大小变化，以切换轮播图显示
-   function updateCarouselDisplay() {
-     var desktopCarousel = document.querySelector('.carousel.desktop');
-     var mobileCarousel = document.querySelector('.carousel.mobile');
-   
-     if (window.innerWidth >= 1200) {
-       if (mobileCarousel.style.display !== 'none') {
-         clearInterval(timerMobile);
-         mobileCarousel.style.display = 'none';
-         desktopCarousel.style.display = 'block';
-         timerDesktop = initCarousel('desktop', currentIndexDesktop);
-         setCarouselHeight(); // 重新设置高度
-       }
-     } else {
-       if (desktopCarousel.style.display !== 'none') {
-         clearInterval(timerDesktop);
-         desktopCarousel.style.display = 'none';
-         mobileCarousel.style.display = 'block';
-         timerMobile = initCarousel('mobile', currentIndexMobile);
-         setCarouselHeight(); // 重新设置高度
-       }
-     }
+ 
+   setInterval(nextSlide, 2000); // 每2秒切换一次
+ }
+ 
+ // 根据屏幕尺寸调用相应的轮播图切换函数
+ function initCarousel() {
+   if (window.innerWidth > 1024) {
+     document.querySelector('.desktop-carousel').style.display = 'block';
+     document.querySelector('.mobile-carousel').style.display = 'none';
+     switchSlide('desktop-carousel');
+   } else {
+     document.querySelector('.desktop-carousel').style.display = 'none';
+     document.querySelector('.mobile-carousel').style.display = 'block';
+     switchSlide('mobile-carousel');
    }
-   
-   
-   // 初始调用
-   updateCarouselDisplay();
-   
-   // 监听窗口大小变化，以切换轮播图
-   window.addEventListener('resize', updateCarouselDisplay);
- // 轮播图区域 
+ }
+ 
+ // 初始化轮播图
+ initCarousel();
+ 
+ // 监听窗口大小变化，重新初始化轮播图
+ window.addEventListener('resize', initCarousel);
+ // 轮播图区域
+ 
 	
 //--------------------这里是分割线-----------------------------
 	
