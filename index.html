@@ -330,44 +330,54 @@
 /* --------------------这里是分割线---------------------------- */	
 
 /* 轮播图区域样式 */
-	 .carousel {
-	   width: 100%;
-	   margin: auto;
-	   overflow: hidden;
-	   text-align: center; /* 添加文本居中，使图片也居中 */
-	 }
-	 
-	 .carousel img {
-	   width: 100%;
-	   height: auto; /* 保持图片的宽高比 */
-	   display: none; /* 默认不显示任何图片 */
-	   transition: opacity 1s ease-in-out;
-	 }
-	 
-	 /* 电脑端轮播图样式 */
-	 @media (min-width: 1200px) {
-	   .carousel img {
-	     max-width: 1920px; /* 设置最大宽度 */
-	     height: auto; /* 高度自动，保持宽高比 */
-	   }
-	 }
-	 
-	 /* 手机端轮播图样式 */
-	 @media (max-width: 1199px) {
-	   .carousel img {
-	     max-width: 900px; /* 设置最大宽度 */
-	     height: auto; /* 高度自动，保持宽高比 */
-		 margin: 0 auto; /* 水平居中 */
-	   }
-	 }
-	 
-	 /* 隐藏链接的默认样式 */
-	 .carousel a {
-	   display: block;
-	   color: transparent;
-	   text-decoration: none;
-	 }
-/* 轮播图区域样式 */
+.carousel {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  max-height: 100vh; /* 限制最大高度为视口高度 */
+  display: none; /* 默认隐藏 */
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  display: none;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 初始时不显示图片 */
+.carousel img {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .carousel.desktop img {
+    display: block; /* 在桌面端显示图片 */
+  }
+  .carousel.desktop {
+    display: block; /* 在桌面端显示轮播图 */
+  }
+}
+
+@media (max-width: 1199px) {
+  .carousel.mobile img {
+    display: block; /* 在移动端显示图片 */
+  }
+  .carousel.mobile {
+    display: block; /* 在移动端显示轮播图 */
+  }
+}
+
+.carousel a {
+  display: block;
+  color: transparent;
+  text-decoration: none;
+}
 
 /* --------------------这里是分割线---------------------------- */	
 
@@ -671,26 +681,28 @@ html, body {
 <!--------------------这里是分割线----------------------------->	  
 
 <!-- 轮播图区域 -->
-  <!-- 电脑端轮播图 -->
-  <div class="carousel desktop">
-    <a href="https://www.example.com/link1" target="_blank">
-      <img src="https://img.alicdn.com/imgextra/i2/2873818587/O1CN018Zo0Ik2DIu1zWPArA_!!2873818587.png">
-    </a>
-    <a href="https://www.example.com/link2" target="_blank">
-      <img src="https://img.alicdn.com/imgextra/i2/2873818587/O1CN01WGS56A2DIu214Q04W_!!2873818587.png">
-    </a>
-  </div>
-  
-  <!-- 手机端轮播图 -->
-  <div class="carousel mobile">
-    <a href="" target="_blank">
-      <img src="https://img.alicdn.com/imgextra/i3/2873818587/O1CN01GjJwkE2DIu1uG48hs_!!2873818587.png">
-    </a>
-    <a href="" target="_blank">
-      <img src="https://img.alicdn.com/imgextra/i4/2873818587/O1CN011WBPe42DIu21NJXme_!!2873818587.png">
-    </a>
-  </div>
-<!-- 轮播图区域 --> 
+<div class="carousel desktop">
+  <!-- 桌面端图片 -->
+  <a href="https://www.example.com/link1" target="_blank" onclick="event.preventDefault();">
+    <img src="https://img.alicdn.com/imgextra/i2/2873818587/O1CN018Zo0Ik2DIu1zWPArA_!!2873818587.png" style="display: block;">
+  </a>
+  <a href="https://www.example.com/link2" target="_blank" onclick="event.preventDefault();">
+    <img src="https://img.alicdn.com/imgextra/i2/2873818587/O1CN01WGS56A2DIu214Q04W_!!2873818587.png" style="display: block;">
+  </a>
+  <!-- 添加更多图片 -->
+</div>
+
+<div class="carousel mobile">
+  <!-- 移动端图片 -->
+  <a href="" target="_blank" onclick="event.preventDefault();">
+    <img src="https://img.alicdn.com/imgextra/i3/2873818587/O1CN01GjJwkE2DIu1uG48hs_!!2873818587.png" style="display: block;">
+  </a>
+  <a href="" target="_blank" onclick="event.preventDefault();">
+    <img src="https://img.alicdn.com/imgextra/i4/2873818587/O1CN011WBPe42DIu21NJXme_!!2873818587.png" style="display: block;">
+  </a>
+  <!-- 添加更多图片 -->
+</div>
+
   
 <!--------------------这里是分割线----------------------------->	   
 
@@ -945,47 +957,86 @@ html, body {
 
  <script>
  // 轮播图区域 
-    // 轮播事件
-    function initCarousel(carouselClass) {
-      var carousel = document.querySelector('.' + carouselClass);
-      var images = carousel.querySelectorAll('img');
-      var totalImages = images.length;
-      var currentIndex = 0;
-    
-      function showNextImage() {
-        images[currentIndex].style.display = 'none';
-        currentIndex = (currentIndex + 1) % totalImages;
-        images[currentIndex].style.display = 'block';
-      }
-    
-      // 显示第一张图片
-      showNextImage();
-      // 每两秒切换一次图片
-      setInterval(showNextImage, 2000);
-    }
-    
-    // 初始化轮播图
-    initCarousel('desktop');
-    initCarousel('mobile');
-    
-    // 根据屏幕宽度显示相应的轮播图
-    function updateCarouselDisplay() {
-      var desktopCarousel = document.querySelector('.carousel.desktop');
-      var mobileCarousel = document.querySelector('.carousel.mobile');
-      if (window.innerWidth >= 1200) {
-        desktopCarousel.style.display = 'block';
-        mobileCarousel.style.display = 'none';
-      } else {
-        desktopCarousel.style.display = 'none';
-        mobileCarousel.style.display = 'block';
-      }
-    }
-    
-    // 初始调用
-    updateCarouselDisplay();
-    
-    // 监听窗口大小变化，以切换轮播图
-    window.addEventListener('resize', updateCarouselDisplay);
+   var currentIndexDesktop = 0;
+   var currentIndexMobile = 0;
+   var timerDesktop, timerMobile;
+   
+   function initCarousel(carouselClass, index) {
+     var carousel = document.querySelector('.' + carouselClass);
+     var images = carousel.querySelectorAll('img');
+     var totalImages = images.length;
+   
+     // 显示指定索引的图片
+     images.forEach(function(img, i) {
+       img.style.display = i === index ? 'block' : 'none';
+     });
+   
+     // 设置轮播图容器的高度为最大图片的高度
+     // 设置轮播图容器的高度为最大图片的高度，但不超过视口的高度
+     function setCarouselHeight() {
+       var maxHeight = 0;
+       images.forEach(function(img) {
+         maxHeight = Math.max(maxHeight, img.offsetHeight);
+       });
+       var viewportHeight = window.innerHeight; // 获取视口的高度
+       carousel.style.height = Math.min(maxHeight, viewportHeight) + 'px'; // 设置高度，但不超过视口的高度
+     }
+   
+   
+     // 初始化时设置高度
+     setCarouselHeight();
+   
+     function showNextImage() {
+       var currentImage = images[index];
+       var nextIndex = (index + 1) % totalImages;
+       var nextImage = images[nextIndex];
+   
+       currentImage.style.display = 'none';
+       index = nextIndex;
+       nextImage.style.display = 'block';
+     }
+   
+     // 使用 setTimeout 来延迟开始轮播
+     var timer = setInterval(showNextImage, 2000);
+   
+     return timer;
+   }
+   
+   // 初始化桌面和移动端轮播图
+   timerDesktop = initCarousel('desktop', currentIndexDesktop);
+   timerMobile = initCarousel('mobile', currentIndexMobile);
+   
+   // 监听窗口大小变化，以切换轮播图显示
+   // 监听窗口大小变化，以切换轮播图显示
+   function updateCarouselDisplay() {
+     var desktopCarousel = document.querySelector('.carousel.desktop');
+     var mobileCarousel = document.querySelector('.carousel.mobile');
+   
+     if (window.innerWidth >= 1200) {
+       if (mobileCarousel.style.display !== 'none') {
+         clearInterval(timerMobile);
+         mobileCarousel.style.display = 'none';
+         desktopCarousel.style.display = 'block';
+         timerDesktop = initCarousel('desktop', currentIndexDesktop);
+         setCarouselHeight(); // 重新设置高度
+       }
+     } else {
+       if (desktopCarousel.style.display !== 'none') {
+         clearInterval(timerDesktop);
+         desktopCarousel.style.display = 'none';
+         mobileCarousel.style.display = 'block';
+         timerMobile = initCarousel('mobile', currentIndexMobile);
+         setCarouselHeight(); // 重新设置高度
+       }
+     }
+   }
+   
+   
+   // 初始调用
+   updateCarouselDisplay();
+   
+   // 监听窗口大小变化，以切换轮播图
+   window.addEventListener('resize', updateCarouselDisplay);
  // 轮播图区域 
 	
 //--------------------这里是分割线-----------------------------
