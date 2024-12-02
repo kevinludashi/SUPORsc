@@ -426,7 +426,7 @@
     .reminder-box {
        border: 1px solid #ccc; /* 边框颜色 */
        border-radius: 10px; /* 圆角大小 */
-       padding: 10px; /* 内边距 */
+       padding: 25px; /* 内边距 */
        width: 99%; /* 宽度自适应设备宽度，留出一定的边距 */
        margin: 5px auto; /* 外边距居中 */
        background-color: #f8f8f8; /* 淡淡的背景色 */
@@ -478,99 +478,123 @@
 /* --------------------这里是分割线---------------------------- */	
 
 /* 以下是客服图标样式区域 */
-  /* 设置页面基本样式 */
-  body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-
-  /* 设置悬浮按钮的样式 */
-  .floating-btn {
-    position: fixed; /* 固定位置 */
-    bottom: 25px; /* 距离底部10px */
-    right: 25px; /* 距离右边10px */
-    width: 50px; /* 宽度50px */
-    height: 50px; /* 高度50px */
-    background-color: #4CAF50; /* 绿色背景 */
-    color: white; /* 白色文字 */
-    border-radius: 50%; /* 圆形边框 */
-    text-align: center; /* 文字居中 */
-    line-height: 50px; /* 行高50px，使图标垂直居中 */
-    font-size: 24px; /* 图标大小 */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* 阴影效果 */
-    cursor: pointer; /* 鼠标样式为指针 */
-    animation: pulse 2s infinite; /* 添加脉冲动画 */
-    overflow: hidden; /* 隐藏溢出内容 */
-    z-index: 1000; /* 高z-index值确保按钮在最前面 */
-  }
-
-  /* 设置图标样式 */
-  .floating-btn i {
-    line-height: 50px; /* 图标垂直居中 */
-  }
-
-  /* 脉冲动画关键帧 */
-  @keyframes pulse {
-    0% {
-      transform: scale(1); /* 初始大小 */
-    }
-    50% {
-      transform: scale(1.1); /* 放大10% */
-    }
-    100% {
-      transform: scale(1); /* 回到初始大小 */
-    }
-  }
-
-  /* 设置模态框样式 */
-  .modal {
-    display: none; /* 默认不显示 */
-    position: fixed; /* 固定位置 */
-    z-index: 1; /* 层级最高 */
-    left: 50%; /* 距离左边50% */
-    top: 50%; /* 距离顶部50% */
-    width: auto; /* 宽度自适应 */
-    max-width: 90%; /* 最大宽度90% */
-    transform: translate(-50%, -50%); /* 使用translate调整位置使其居中 */
-    text-align: center; /* 文字居中 */
-	left: 50%; /* 距离左边50% */
-	top: 50%; /* 距离顶部50% */
-  }
-
-  /* 设置模态框内容样式 */
-  .modal-content {
-    background-color: #ffffff; /* 设置一个白色背景 */
-    margin: auto; /* 水平居中 */
-    padding: 20px; /* 内边距20px */
-    border: 1px solid #888; /* 边框 */
-    width: 80%; /* 宽度80% */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 阴影效果 */
-    border-radius: 8px; /* 圆角边框 */
-  }
-
-  /* 设置关闭按钮样式 */
-  .close {
-    color: #aaa; /* 淡色文字 */
-    float: right; /* 右浮动 */
-    font-size: 28px; /* 大号字体 */
-    font-weight: bold; /* 加粗 */
-  }
-
-  /* 鼠标悬停关闭按钮时的样式 */
-  .close:hover,
-  .close:focus {
-    color: black; /* 黑色文字 */
-    text-decoration: none; /* 去除下划线 */
-    cursor: pointer; /* 鼠标样式为指针 */
-  }
-
-  /* 响应式设计：当屏幕宽度小于600px时，调整模态框内容宽度 */
-  @media (max-width: 600px) {
-    .modal-content {
-      width: 90%; /* 宽度90% */
-    }
-  }
+ /* 设置页面基本样式 */
+ body, html {
+   height: 100%;
+   margin: 0;
+   font-family: Arial, sans-serif;
+ }
+ 
+ /* 设置悬浮按钮的样式 */
+ .floating-btn {
+   position: fixed; /* 固定位置 */
+   bottom: 150px; /* 距离底部10px */
+   right: 35px; /* 距离右边10px */
+   width: 50px; /* 宽度50px */
+   height: 50px; /* 高度50px */
+   background-color: #4CAF50; /* 绿色背景 */
+   color: white; /* 白色文字 */
+   border-radius: 50%; /* 圆形边框 */
+   text-align: center; /* 文字居中 */
+   line-height: 50px; /* 行高50px，使图标垂直居中 */
+   font-size: 24px; /* 图标大小 */
+   box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* 阴影效果 */
+   cursor: pointer; /* 鼠标样式为指针 */
+   animation: pulse 2s infinite; /* 添加脉冲动画 */
+   overflow: hidden; /* 隐藏溢出内容 */
+   z-index: 1000; /* 高z-index值确保按钮在最前面 */
+ }
+ 
+ /* 新增的按钮样式（回到顶部和刷新按钮） */
+ .floating-btn-top {
+   bottom: 80px; /* 距离底部85px */
+   background-color: #007bff; /* 蓝色背景 */
+ }
+ 
+ .floating-btn-refresh {
+   bottom: 25px; /* 距离底部145px */
+   background-color: #f39c12; /* 橙色背景 */
+ }
+ 
+ /* 缩小整个按钮 */
+ .floating-btn {
+   width: 40px; /* 缩小按钮宽度 */
+   height: 40px; /* 缩小按钮高度 */
+   font-size: 22px; /* 缩小图标的字体大小 */
+   line-height: 40px; /* 调整行高，使图标垂直居中 */
+   text-align: center; /* 确保图标水平居中 */
+   display: flex;
+   justify-content: center; /* 水平居中 */
+   align-items: center; /* 垂直居中 */
+ }
+ 
+ /* 确保图标大小与按钮一致并垂直居中 */
+ .floating-btn i {
+   font-size: 22px; /* 确保图标大小一致 */
+ }
+ 
+ /* 设置图标样式 */
+ .floating-btn i {
+   line-height: 50px; /* 图标垂直居中 */
+ }
+ 
+ /* 脉冲动画关键帧 */
+ @keyframes pulse {
+   0% {
+     transform: scale(1); /* 初始大小 */
+   }
+   50% {
+     transform: scale(1.1); /* 放大10% */
+   }
+   100% {
+     transform: scale(1); /* 回到初始大小 */
+   }
+ }
+ 
+ /* 设置模态框样式 */
+ .modal {
+   display: none; /* 默认不显示 */
+   position: fixed; /* 固定位置 */
+   z-index: 1; /* 层级最高 */
+   left: 50%; /* 距离左边50% */
+   top: 50%; /* 距离顶部50% */
+   width: auto; /* 宽度自适应 */
+   max-width: 90%; /* 最大宽度90% */
+   transform: translate(-50%, -50%); /* 使用translate调整位置使其居中 */
+   text-align: center; /* 文字居中 */
+ }
+ 
+ .modal-content {
+   background-color: #ffffff; /* 设置一个白色背景 */
+   margin: auto; /* 水平居中 */
+   padding: 20px; /* 内边距20px */
+   border: 1px solid #888; /* 边框 */
+   width: 80%; /* 宽度80% */
+   box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 阴影效果 */
+   border-radius: 8px; /* 圆角边框 */
+ }
+ 
+ /* 设置关闭按钮样式 */
+ .close {
+   color: #aaa; /* 淡色文字 */
+   float: right; /* 右浮动 */
+   font-size: 28px; /* 大号字体 */
+   font-weight: bold; /* 加粗 */
+ }
+ 
+ .close:hover,
+ .close:focus {
+   color: black; /* 黑色文字 */
+   text-decoration: none; /* 去除下划线 */
+   cursor: pointer; /* 鼠标样式为指针 */
+ }
+ 
+ /* 响应式设计：当屏幕宽度小于600px时，调整模态框内容宽度 */
+ @media (max-width: 600px) {
+   .modal-content {
+     width: 90%; /* 宽度90% */
+   }
+ }
   /* 以上下是客服图标样式区域 */
   
 /* --------------------这里是分割线---------------------------- */	
@@ -613,14 +637,26 @@
 <body>
 
  <!-- 客服动态图标 -->
+<!-- 客服动态图标 -->
 <div class="floating-btn" onclick="openModal()">
   <i class="fa-solid fa-headset"></i>
 </div>
 
+<!-- 回到顶部按钮 -->
+<div class="floating-btn floating-btn-top" onclick="scrollToTop()">
+  <i class="fa-solid fa-arrow-up"></i>
+</div>
+
+<!-- 刷新按钮 -->
+<div class="floating-btn floating-btn-refresh" onclick="refreshPage()">
+  <i class="fa-solid fa-sync-alt"></i>
+</div>
+
+<!-- 模态框 -->
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
-	<img src="https://img.alicdn.com/imgextra/i1/2873818587/O1CN01RQ6abl2DIu22EUvFT_!!2873818587.png" alt="客服图片" style="width:100%;">
+    <img src="https://img.alicdn.com/imgextra/i1/2873818587/O1CN01RQ6abl2DIu22EUvFT_!!2873818587.png" alt="客服图片" style="width:100%;">
     <p>请微信扫一扫或截图到相册，微信识别添加在线微信客服沟通或点击去团购，团购页面也有客服通道！</p>
   </div>
 </div>
@@ -684,13 +720,15 @@
 
 <!-- 温馨提示 -->
    <div class="reminder-box">
-      <h2 class="reminder-title"style="margin-top: 2px; margin-bottom: 2px;">购前须知:</h2>
+      <h3 class="reminder-title"style="margin-top: 2px; margin-bottom: 5px;font-size: 26px;">购前须知:</h3>
          <ul class="reminder-list" style="margin-top: 5px; margin-bottom: 2px;">
-            <li>1、页面顶端有商品分类，可点击进入相应分类选购;</li>
-            <li>2、页面右下角有客服按钮，点击后弹出微信名片，请截图到相册，微信识别添加;</li>
-            <li>3、橙色比价是目前天猫淘宝官方所售价格;</li>
-			<li>4、选产品详情以及购买渠道，请点击去团购，即可跳转购买页面;</li>
-			<li>5、若想再选购其他产品，请浏览器重新进入本商城网页，或直接在团长页面选购其他产品;</li>
+            <li>1、点击页面顶端有商品分类导航;</li>
+			<li>2、当页面出现BUG，请点击右下角刷新按钮;</li>
+            <li style="color: #e67e22;">3、页面右下角客服按钮，点击后弹出微信名片，请截图到相册，微信识别添加;</li>
+			<li>4、页面右下角有 页面刷新 “↻” 和 回到顶端 “↑” 按钮;</li>
+            <li>5、橙色比价是目前天猫淘宝官方所售价格;</li>
+			<li style="color: #e67e22;">6、产品详情以及购买渠道，请点击去团购，即可跳转购买页面;</li>
+			<li>7、若想重新选产品，请浏览器重新进入本商城或直接在团长页面选购其他产品;</li>
         </ul>
     </div>
 <!-- 温馨提示 -->
@@ -974,42 +1012,42 @@
 //--------------------这里是分割线-----------------------------
 	
 // 导航栏分类区域
-			        // 根据分类过滤商品
-			        function filterProducts(category) {
-			            // 获取所有商品卡片
-			            var products = document.querySelectorAll('.product-card');
+	// 根据分类过滤商品
+	function filterProducts(category) {
+	// 获取所有商品卡片
+	var products = document.querySelectorAll('.product-card');
 			
-			            // 遍历所有商品卡片，显示或隐藏
-						products.forEach(function(product) {
-						                // 获取商品的分类
-						                var productCategory = product.getAttribute('data-category');
+	// 遍历所有商品卡片，显示或隐藏
+	products.forEach(function(product) {
+	// 获取商品的分类
+	var productCategory = product.getAttribute('data-category');
 						                
-						                // 如果选择的分类是 'all'，显示所有商品；否则，只有匹配的分类才会显示
-						                if (category === 'all' || productCategory === category) {
-						                    product.style.display = 'block'; // 显示该商品
-						                } else {
-						                    product.style.display = 'none'; // 隐藏该商品
-						                }
-						            });
+	// 如果选择的分类是 'all'，显示所有商品；否则，只有匹配的分类才会显示
+	if (category === 'all' || productCategory === category) {
+	  product.style.display = 'block'; // 显示该商品
+	  } else {
+	  product.style.display = 'none'; // 隐藏该商品
+		}
+	  });
 						
-						            // 关闭下拉菜单
-						            var dropdown = document.getElementById("dropdownMenu");
-						            dropdown.classList.remove("show");
-						        }
+	// 关闭下拉菜单
+	 var dropdown = document.getElementById("dropdownMenu");
+		dropdown.classList.remove("show");
+	}
 						
-						        // 切换下拉菜单的显示和隐藏
-						        function toggleDropdown() {
-						            var dropdown = document.getElementById("dropdownMenu");
-						            if (dropdown.classList.contains("show")) {
-						                dropdown.classList.remove("show");
-						            } else {
-						                dropdown.classList.add("show");
-						            }
-						        }
+	// 切换下拉菜单的显示和隐藏
+	function toggleDropdown() {
+    var dropdown = document.getElementById("dropdownMenu");
+	if (dropdown.classList.contains("show")) {
+	  dropdown.classList.remove("show");
+	} else {
+	  dropdown.classList.add("show");
+	 }
+	 }
 						
-						        // 默认加载时显示所有商品
-						        filterProducts('all');
-			// 导航栏分类区域	
+     // 默认加载时显示所有商品
+	 filterProducts('all');
+// 导航栏分类区域	
 
 //--------------------这里是分割线-----------------------------
 
@@ -1033,6 +1071,19 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// 回到顶部的函数
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+// 刷新页面的函数
+function refreshPage() {
+  location.reload();
+}
 // 客服动态图标script
 
   </script>
@@ -1042,7 +1093,7 @@ window.onclick = function(event) {
 
 <!-- 页脚 -->
   <footer>
-    <p>&copy; 2024 SUPOR苏泊尔兔享专卖店.全国联保.假一罚三.</p>  <!-- 页脚版权信息 -->
+    <p>&copy; 2024 SUPOR苏泊尔专卖店.全国联保.假一罚三.</p>  <!-- 页脚版权信息 -->
   </footer>
 <!-- 页脚 -->
 
